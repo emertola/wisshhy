@@ -540,7 +540,7 @@ console.log('Event listeners:', getEventListeners(window));
 - Test edge cases after fixing
 - Clean up debug code before commit
 
-## Project: WishPool (Birthday Greetings App)
+## Project: Wisshhy (Birthday Greetings App)
 
 ### Common Problem Areas
 

@@ -590,7 +590,7 @@ When reviewing code, use this format:
 - Consistent patterns reduce cognitive load
 - Every review is a learning opportunity
 
-## Project: WishPool (Birthday Greetings App)
+## Project: Wisshhy (Birthday Greetings App)
 
 ### Critical Rules to Enforce
 

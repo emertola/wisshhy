@@ -535,7 +535,7 @@ const maxWidthClasses = {
 - Feedback: always show loading, success, error states
 - Keep it simple: clean, intuitive interfaces
 
-## Project: WishPool (Birthday Greetings App)
+## Project: Wisshhy (Birthday Greetings App)
 
 ### Design System
 

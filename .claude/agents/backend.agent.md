@@ -263,7 +263,7 @@ oauth.register(
 - Keep endpoints focused and single-purpose
 - Use proper HTTP methods and status codes
 
-## Project: WishPool (Birthday Greetings App)
+## Project: Wisshhy (Birthday Greetings App)
 
 ### Core Entities
 
