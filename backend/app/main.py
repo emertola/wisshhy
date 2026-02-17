@@ -1,6 +1,9 @@
 ﻿"""Bare minimum FastAPI application."""
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from supabase import Client
+
+from app.database import get_db
 
 app = FastAPI(title="Wisshhy API")
 
@@ -21,6 +24,19 @@ async def root():
 
 
 @app.get("/health")
-async def health():
-    """Health check."""
-    return {"status": "healthy"}
+async def health(db: Client = Depends(get_db)):
+    """Health check with database connection test."""
+    try:
+        # Test database connection
+        # This is a simple ping - adjust based on your tables
+        db.table("_migrations").select("*").limit(1).execute()
+        return {
+            "status": "healthy",
+            "database": "connected"
+        }
+    except Exception as e:
+        return {
+            "status": "healthy",
+            "database": "disconnected",
+            "error": str(e)
+        }
