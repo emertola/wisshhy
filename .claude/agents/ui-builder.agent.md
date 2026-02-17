@@ -534,3 +534,32 @@ const maxWidthClasses = {
 - Accessibility: everyone should be able to use the app
 - Feedback: always show loading, success, error states
 - Keep it simple: clean, intuitive interfaces
+
+## Project: WishPool (Birthday Greetings App)
+
+### Design System
+
+- Primary: #7C3AED (Purple 700)
+- Secondary: #DB2777 (Pink 600)
+- Accent: #0EA5E9 (Sky 500)
+- Font: Inter (Google Fonts)
+- Border radius: 8px cards, 6px inputs
+- Theme: Warm, celebratory, birthday-focused
+
+### Pages to Build
+
+- / → Homepage (SSR, public, marketing)
+- /login, /signup → Auth pages (CSR, guest middleware)
+- /dashboard → My pages list (CSR, auth required)
+- /dashboard/create → Create page form (CSR, auth required)
+- /edit/[id] → Edit page form (CSR, auth required)
+- /greetings/[token] → Contribute messages (SSR, auth required)
+- /view/[token] → Public reveal (SSR, no auth, confetti animation)
+
+### Key UX Rules
+
+- Mobile-first (320px minimum)
+- Every async operation needs loading state
+- Every destructive action needs confirmation modal
+- Empty states must have CTA guidance
+- Celebrant reveal page: confetti on first load

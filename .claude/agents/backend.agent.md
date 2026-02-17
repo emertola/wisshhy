@@ -262,3 +262,30 @@ oauth.register(
 - Follow FastAPI best practices from official docs
 - Keep endpoints focused and single-purpose
 - Use proper HTTP methods and status codes
+
+## Project: WishPool (Birthday Greetings App)
+
+### Core Entities
+
+- users — email/password + Google OAuth
+- greeting_pages — has share_token (contributor) and public_token (reveal)
+- celebrant_images — up to 10 images per page
+- messages — one per user per page (max 1000 chars)
+
+### Key Business Rules
+
+- Only page creator can edit/delete a page
+- Only message author can edit/delete their message
+- Public reveal page (/view/{public_token}) requires NO authentication
+- Contributor page (/greetings/{share_token}) REQUIRES authentication
+- Each user can only post ONE message per greeting page
+
+### API Versioning
+
+- All endpoints under /api/v1/
+- Always return: { success, data, message } or { success, error }
+
+### Token Generation
+
+- share_token and public_token: cryptographically random, 32-char hex
+- Generated on greeting page creation, never changed after
