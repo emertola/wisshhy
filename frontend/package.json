@@ -18,7 +18,9 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
     "@nuxt/eslint": "^1.15.1",
+    "@types/node": "^25.3.0",
     "eslint": "^10.0.0",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
