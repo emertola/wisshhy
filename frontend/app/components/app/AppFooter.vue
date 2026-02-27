@@ -9,61 +9,67 @@
             <span class="text-2xl font-bold text-purple-700">WishPool</span>
           </div>
           <p class="text-gray-600 text-sm max-w-md">
-            Create beautiful birthday greeting pages and collect heartfelt wishes from friends and family. 
-            Make every birthday special with WishPool.
+            Create beautiful birthday greeting pages and collect heartfelt wishes from friends and
+            family. Make every birthday special with WishPool.
           </p>
         </div>
-        
+
         <!-- Product Links -->
         <div>
           <h3 class="font-semibold text-gray-900 mb-4">Product</h3>
           <ul class="space-y-2">
             <li>
-              <NuxtLink to="/#how-it-works" class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
+              <NuxtLink
+                to="/#how-it-works"
+                class="text-gray-600 hover:text-purple-600 text-sm transition-colors"
+              >
                 How It Works
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/#features" class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
+              <NuxtLink
+                to="/#features"
+                class="text-gray-600 hover:text-purple-600 text-sm transition-colors"
+              >
                 Features
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/dashboard" class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
+              <NuxtLink class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
                 Dashboard
               </NuxtLink>
             </li>
           </ul>
         </div>
-        
+
         <!-- Company Links -->
         <div>
           <h3 class="font-semibold text-gray-900 mb-4">Company</h3>
           <ul class="space-y-2">
             <li>
-              <NuxtLink to="/about" class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
+              <NuxtLink class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
                 About
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/privacy" class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
+              <NuxtLink class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
                 Privacy
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/terms" class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
+              <NuxtLink class="text-gray-600 hover:text-purple-600 text-sm transition-colors">
                 Terms
               </NuxtLink>
             </li>
           </ul>
         </div>
       </div>
-      
+
       <!-- Bottom Bar -->
-      <div class="mt-8 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-sm text-gray-600">
-          © {{ currentYear }} WishPool. All rights reserved.
-        </p>
+      <div
+        class="mt-8 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-sm text-gray-600">© {{ currentYear }} WishPool. All rights reserved.</p>
         <div class="flex items-center gap-6">
           <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
             <span class="sr-only">Twitter</span>

@@ -1,39 +1,34 @@
 <script setup lang="ts">
-import type { close } from "node:fs";
+import type { close } from 'node:fs'
 
-const mobileMenuOpen = ref(false);
-const loggingOut = ref(false);
+const mobileMenuOpen = ref(false)
+const loggingOut = ref(false)
 
 // TODO: Replace with actual auth state from Pinia store
-const isAuthenticated = ref(false);
+const isAuthenticated = ref(false)
 
 const handleLogout = async () => {
-  loggingOut.value = true;
+  loggingOut.value = true
   try {
     // TODO: Implement logout logic
     // await authStore.logout()
-    await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate API call
-    mobileMenuOpen.value = false;
+    await new Promise((resolve) => setTimeout(resolve, 500)) // Simulate API call
+    mobileMenuOpen.value = false
     // navigateTo("/login");
   } catch (error) {
-    console.error("Logout failed:", error);
+    console.error('Logout failed:', error)
   } finally {
-    loggingOut.value = false;
+    loggingOut.value = false
   }
-};
+}
 </script>
 
 <template>
-  <header
-    class="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-sm bg-white/90"
-  >
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-sm bg-white/90">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo / Brand -->
-        <NuxtLink
-          to="/"
-          class="flex items-center gap-2 hover:opacity-80 transition-opacity"
-        >
+        <NuxtLink to="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <span class="text-3xl">🎂</span>
           <span class="text-2xl font-bold text-purple-700">WishPool</span>
         </NuxtLink>
@@ -55,18 +50,10 @@ const handleLogout = async () => {
 
           <!-- Auth State -->
           <template v-if="isAuthenticated">
-            <NuxtLink
-              to="/dashboard"
-              class="text-gray-600 hover:text-purple-600 transition-colors font-medium"
-            >
+            <NuxtLink class="text-gray-600 hover:text-purple-600 transition-colors font-medium">
               My Pages
             </NuxtLink>
-            <UButton
-              color="primary"
-              variant="soft"
-              @click="handleLogout"
-              :loading="loggingOut"
-            >
+            <UButton color="primary" variant="soft" @click="handleLogout" :loading="loggingOut">
               Log Out
             </UButton>
           </template>
@@ -74,7 +61,7 @@ const handleLogout = async () => {
             <NuxtLink>
               <UButton color="secondary" variant="ghost"> Log In </UButton>
             </NuxtLink>
-            <NuxtLink to="/signup">
+            <NuxtLink>
               <UButton color="primary"> Get Started </UButton>
             </NuxtLink>
           </template>
@@ -97,9 +84,7 @@ const handleLogout = async () => {
       <template #body>
         <div class="flex flex-col h-full md:hidden">
           <!-- Header -->
-          <div
-            class="flex items-center justify-between p-6 border-b border-gray-200"
-          >
+          <div class="flex items-center justify-between p-6 border-b border-gray-200">
             <div class="flex items-center gap-2">
               <span class="text-3xl">🎂</span>
               <span class="text-2xl font-bold text-purple-700">WishPool</span>
@@ -132,7 +117,6 @@ const handleLogout = async () => {
 
             <template v-if="isAuthenticated">
               <NuxtLink
-                to="/dashboard"
                 @click="mobileMenuOpen = false"
                 class="text-lg text-gray-700 hover:text-purple-600 transition-colors py-2"
               >
@@ -143,22 +127,15 @@ const handleLogout = async () => {
             <!-- Auth Buttons -->
             <div class="border-t border-gray-200 pt-6 mt-auto space-y-3">
               <template v-if="isAuthenticated">
-                <UButton
-                  color="primary"
-                  block
-                  @click="handleLogout"
-                  :loading="loggingOut"
-                >
+                <UButton color="primary" block @click="handleLogout" :loading="loggingOut">
                   Log Out
                 </UButton>
               </template>
               <template v-else>
                 <NuxtLink @click="mobileMenuOpen = false">
-                  <UButton color="neutral" variant="outline" block>
-                    Log In
-                  </UButton>
+                  <UButton color="neutral" variant="outline" block> Log In </UButton>
                 </NuxtLink>
-                <NuxtLink to="/signup" @click="mobileMenuOpen = false">
+                <NuxtLink @click="mobileMenuOpen = false">
                   <UButton color="primary" block> Get Started </UButton>
                 </NuxtLink>
               </template>
